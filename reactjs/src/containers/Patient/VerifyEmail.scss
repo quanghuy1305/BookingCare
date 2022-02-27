@@ -1,0 +1,60 @@
+// .verifyEmail-container{
+//      background-color: #ecf0f1;
+//      height: 100%;
+//      .verifyEmail-content{
+//           display: flex;
+//           align-items: center;
+//           justify-content: center;
+//           text-align: center;
+//           margin-top: 120px;
+//           height: 50%;
+//           border: 1px solid red;
+//           .infor-booking{
+
+//                font-size: 17px;
+//                font-weight: 600;
+//                margin-top: 30px;
+//                text-align: center;
+//                text-transform: uppercase;
+//                color: red;
+//           }
+//      }
+
+// }
+
+.Header {
+  height: 10%;
+}
+
+.verifyEmail-container {
+  height: 80%;
+  display: flex;
+  .verifyEmail-content {
+    justify-content: center;
+    margin: 0 auto;
+    .infor-booking {
+      height: 100%;
+      text-align: center;
+      font-size: 30px;
+      color: red;
+      align-items: center;
+      width: auto;
+      height: 100px;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      margin: 300px auto;
+      border-radius: 10px;
+    }
+  }
+}
+
+.content-footer {
+  height: 10%;
+  text-align: center;
+  padding-top: 8px;
+  background-color: rgb(132, 198, 230);
+  border: 1px solid rgb(132, 198, 230);
+}

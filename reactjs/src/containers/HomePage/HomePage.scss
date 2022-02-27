@@ -1,0 +1,204 @@
+.slick-prev {
+  left: -60px !important;
+  z-index: 100 !important;
+  height: 26px !important;
+  width: 18px !important;
+  background-color: rgba(243, 243, 243, 0.938) !important;
+  border-radius: 11px;
+}
+
+.slick-next {
+  padding-left: 10px;
+  right: -21px !important;
+  z-index: 100 !important;
+  height: 26px !important;
+  width: 18px !important;
+  background-color: rgba(243, 243, 243, 0.938) !important;
+  border-radius: 11px;
+}
+
+.slick-disabled {
+  display: none !important;
+}
+
+.slick-next:before,
+.slick-prev:before {
+  color: rgb(132, 198, 230) !important;
+  font-family: "slick";
+  font-size: 33px !important;
+  line-height: 1;
+  opacity: 0.75;
+}
+.section-share {
+  &.section-specialty {
+    //chuyên khoa
+    background: #f5f5f5;
+  }
+  &.section-medical-facility {
+    background: white;
+  }
+  &.section-outstanding-doctor {
+    //Bac si
+    background: white;
+  }
+  &.section-handbook {
+    background: #f5f5f5;
+  }
+  &.section-about {
+    height: 500px !important;
+    background: #f5f5f5;
+    border-top: 1px solid #f5f5f5;
+    border-bottom: 1px solid #f5f5f5;
+  }
+  .section-body {
+    .specialty-child {
+      .specialty-name {
+        padding: 10px 0;
+      }
+    }
+    .section-customize {
+      padding: 5px;
+      cursor: pointer;
+
+      &:hover {
+        color: #49bce2;
+      }
+
+      .customize-border {
+        border: 2px solid grey;
+        padding: 20px;
+      }
+
+      .bg-img {
+        height: 150px;
+        width: 278px;
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-color: #eee;
+
+        // &.section-specialty {
+        //   // background-image: url('../../assets/specialty/co-xuong-khop.jpg');
+        // }
+        &.section-medical-facility {
+          background-image: url("../../assets/medical-facility/benh-vien-thu-cuc.jpg");
+        }
+        &.section-outstanding-doctor {
+          // background-image: url('../../assets/outstanding-doctor/anh-dai-dien-bs.jpg');
+          width: 120px;
+          height: 120px;
+          border-radius: 50%;
+        }
+        &.section-handbook {
+          background-image: url("../../assets/handbook/handbook.jpg");
+        }
+      }
+    }
+  }
+}
+.section-share {
+  height: 330px;
+
+  .section-container {
+    margin: 0 150px;
+    display: flex;
+    flex-direction: column;
+
+    .section-header {
+      height: 60px;
+      margin-bottom: 35px;
+      padding-top: 30px;
+
+      .title-section {
+        font-size: 25px;
+        font-weight: 600;
+      }
+
+      .btn-section {
+        border-radius: 10px;
+        outline: none;
+        border: none;
+        display: block;
+        padding: 10px 15px;
+        float: right;
+        color: black;
+        cursor: pointer;
+        text-transform: uppercase;
+
+        &:hover {
+          background-color: rgb(247, 228, 60);
+          color: white;
+        }
+      }
+    }
+  }
+}
+
+.section-outstanding-doctor {
+  .outer-bg {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+  .name-doctor {
+    font-weight: 600;
+  }
+  .phone-doctor {
+    font-style: italic;
+  }
+}
+
+.home-footer {
+  text-align: center;
+  padding-top: 8px;
+  background-color: rgb(132, 198, 230);
+  a {
+    text-decoration: unset;
+  }
+  border: 1px solid rgb(132, 198, 230);
+}
+
+.section-about {
+  padding: 0 100px;
+  .section-about-header {
+    padding: 20px 10px;
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .section-about-content {
+    display: flex;
+    gap: 55px;
+    width: 100%;
+    .content-left {
+      width: 50%;
+    }
+    .content-center {
+      width: 25%;
+      margin-top: 10px;
+      .content-child {
+        width: 300px;
+        img {
+          align-items: center;
+          height: 100px;
+          width: 120px;
+          margin-left: 70px;
+        }
+      }
+    }
+    .content-right {
+      width: 25%;
+      margin-top: 10px;
+      .content-child {
+        width: 300px;
+        text-align: center;
+        img {
+          align-items: center;
+          height: 90px;
+          width: 200px;
+          margin-left: 70px;
+        }
+      }
+    }
+  }
+}

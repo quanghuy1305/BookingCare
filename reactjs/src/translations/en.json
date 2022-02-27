@@ -1,0 +1,171 @@
+{
+  "homeheader": {
+    "specialty": "Medical specialty",
+    "searchdoctor": "Find a doctor by specialty",
+    "health-facility": "Health facilities",
+    "select-room": "Choose hospital clinic",
+    "doctor": "Doctor",
+    "select-doctor": "Choose a good doctor",
+    "fee": "Checkup package",
+    "check-health": "General Check-Up",
+    "support": "Support",
+    "welcome": "Welcome, "
+  },
+
+  "banner": {
+    "title1": "MEDICAL PLATFORM",
+    "title2": "COMPREHENSIVE HEALTH CARE",
+    "search": "Find a medical specialty",
+    "text1": "Specialized",
+    "text2": "Examination",
+    "text3": "Online",
+    "text4": "Examination",
+    "text5": "General",
+    "text6": "Examination",
+    "text7": "Medical",
+    "text8": "Test",
+    "text9": "Mental",
+    "text10": "Health",
+    "text11": "Dental",
+    "text12": "Examination"
+  },
+  "menu": {
+    "admin": {
+      "manage-user": "User System",
+      "manage-doctor": "Manage Doctor",
+      "manage-admin": "Manage Admin",
+      "crud": "CRUD user",
+      "crud-redux": "CRUD redux",
+      "clinic": "Clinic",
+      "manage-clinic": "Manage Clinic",
+      "specialty": "Specialties",
+      "manage-specialty": "Manage Specialties",
+      "handbook": "HandBook",
+      "manage-handbook": "Manage HandBook"
+    },
+    "doctor": {
+      "manage-schedule": "Manage Doctor's Schedule",
+      "manage-patient": "Manage Doctor's Patient"
+    }
+  },
+  "manage-user": {
+    "title": "Manage User",
+    "add": "Add a new user",
+    "email": "Email",
+    "password": "Password",
+    "firstName": "First Name",
+    "lastName": "Last Name",
+    "phoneNumber": "Phone number",
+    "address": "Address",
+    "gender": "Gender",
+    "position": "Position",
+    "roleId": "Role",
+    "image": "Avatar",
+    "LoadImg": "UpLoad",
+    "save": "Save user",
+    "edit": "Save change"
+  },
+
+  "homepage": {
+    "outstanding-doctor": "Doctor",
+    "more-info": "More Information",
+    "specialty": "Medical specialty"
+  },
+
+  "manage-schedule": {
+    "title": "Manage doctor's Schedule",
+    "choose-doctor": "Choose Doctor",
+    "choose-date": "Choose Date",
+    "btn-save": "Save Infor"
+  },
+  "manage-specialty": {
+    "title": "Manage Specialty",
+    "nameSpecialty": "Name's Specialty",
+    "img": "Avatar",
+    "load": " Up load",
+    "save": "Save Infor",
+    "edit": "Save change"
+  },
+  "manage-patient": {
+    "title": "Manage doctor's Patient",
+    "choose-date": "Choose Date",
+    "number": "Number",
+    "time": "Time",
+    "fullName": "FullName",
+    "address": "Address",
+    "reason": "Reason",
+    "phoneNumber": "Phone number",
+    "email": "Email",
+    "gender": "Sex",
+    "action": "Action",
+    "btn-confirm": "Confirm",
+    "noData": "No Data"
+  },
+  "patient": {
+    "detail-doctor": {
+      "schedule": "Schedule",
+      "no-schedule": "The doctor does not have a schedule during this time. Please choose another date !",
+      "choose": "Choose ",
+      "book-free": " and book (free)"
+    },
+    "extra-infor-doctor": {
+      "text-address": "Address",
+      "price": "Price: ",
+      "detail": "See detail",
+      "payment": "The patient can pay the cost in the form of: ",
+      "hide-price": "Hide price list"
+    },
+    "booking-modal": {
+      "title": "Booking information",
+      "fullName": "Your Name",
+      "phoneNumber": "Phone Number",
+      "email": "Email",
+      "address": "Address",
+      "reason": "Reasons for examination",
+      "birthday": "Date of birth",
+      "gender": "Sex",
+      "btn-confirm": "Confirm",
+      "btn-cancel": "Cancel",
+      "priceBooking": "Free Booking",
+      "price": "Price: "
+    },
+    "verify-email": {
+      "success": "Appointment confirmed successfully !",
+      "failed": "Appointment does not exist or has been confirmed !"
+    }
+  },
+  "admin": {
+    "manage-doctor": {
+      "title": "Create More Information Doctor",
+      "select-doctor": "Select Doctor",
+      "Intro": "Introduction",
+      "add": "Create Infor",
+      "save": "Save Infor",
+      "price": "Price",
+      "payment": "Payment Method",
+      "province": "Branch",
+      "nameClinic": "Clinic's name",
+      "addressClinic": "Clinic's address",
+      "note": "Note",
+      "specialty": "Specialty",
+      "select-clinic": "Clinic"
+    }
+  },
+  "about": {
+    "title": "Media talk about online consultation and medical examination",
+    "left": {
+      "1": "1. High quality medical examination",
+      "2": "2. Highly qualified doctor",
+      "3": "3. Top quality service",
+      "4": "4. Enthusiastic consultation",
+      "HealthDeclaration": "HEALTH DECLARATION – QR CODE"
+    },
+    "right": {
+      "location": "Address: ",
+      "address": "18/879 Ly Tu Trong, An Cu Ward, Ninh Kieu District, Can Tho",
+      "tel": " 0200 567 567 (Time in works)",
+      "timework": "Working time: ",
+      "time": "Administration: 7:00 a.m. - 6:00 p.m. (Monday - Friday)"
+    }
+  }
+}
