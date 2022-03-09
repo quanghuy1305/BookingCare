@@ -8,7 +8,6 @@ import { LANGUAGES, CRUD_ACTIONS } from "../../../utils";
 import { getScheduleDoctorByDate } from "../../../services/userService";
 import { FormattedMessage } from "react-intl";
 import BookingModal from "./Modal/BookingModal";
-import { PaymentElement } from "@stripe/react-stripe-js";
 
 class DoctorSchedule extends Component {
   constructor(props) {
@@ -33,6 +32,7 @@ class DoctorSchedule extends Component {
       this.setState({
         allAvailableTime: res.data ? res.data : [],
       });
+      console.log(res);
     }
 
     this.setState({
@@ -123,6 +123,8 @@ class DoctorSchedule extends Component {
   };
 
   render() {
+    console.log(this.state);
+
     let {
       allDays,
       allAvailableTime,

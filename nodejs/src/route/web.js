@@ -78,7 +78,6 @@ let initWebRoutes = (app) => {
   );
 
   router.put("/api/edit-specialty", specialtyController.handleEditSpecialty);
-
   return app.use("/", router);
 };
 

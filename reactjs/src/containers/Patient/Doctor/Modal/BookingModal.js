@@ -14,7 +14,6 @@ import { postPatientBookAppointment } from "../../../../services/userService";
 import { toast } from "react-toastify";
 import LoadingOverlay from "react-loading-overlay";
 import moment from "moment";
-import Pay from "./PaymentModal";
 
 class BookingModal extends Component {
   constructor(props) {
@@ -185,6 +184,7 @@ class BookingModal extends Component {
     if (dataTime && !_.isEmpty(dataTime)) {
       doctorId = dataTime.doctorId;
     }
+    console.log(this.props);
     return (
       <Modal
         isOpen={isOpenModal}
@@ -303,14 +303,12 @@ class BookingModal extends Component {
               </div>
             </div>
             <div className="booking-modal-footer">
-              <Pay onClose={this.handleConfirmBooking}>
-                <button
-                  className="btn-booking-confirm"
-                  // onClick={() => this.handleConfirmBooking()}
-                >
-                  <FormattedMessage id="patient.booking-modal.btn-confirm" />
-                </button>
-              </Pay>
+              <button
+                className="btn-booking-confirm"
+                onClick={() => this.handleConfirmBooking()}
+              >
+                <FormattedMessage id="patient.booking-modal.btn-confirm" />
+              </button>
               <button
                 className="btn-booking-cancel"
                 onClick={closeBookingModal}
