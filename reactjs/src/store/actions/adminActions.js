@@ -14,7 +14,6 @@ import {
   editSpecialtyService,
 } from "../../services/userService";
 import { toast } from "react-toastify";
-import { dispatch } from "../../redux";
 
 export const fetchGenderStart = () => {
   return async (dispatch, getState) => {

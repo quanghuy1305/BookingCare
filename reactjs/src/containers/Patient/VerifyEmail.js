@@ -4,6 +4,7 @@ import { postVerifyBookAppointment } from "../../services/userService";
 import { FormattedMessage } from "react-intl";
 import HomeHeader from "../HomePage/HomeHeader";
 import "./VerifyEmail.scss";
+// import Paypal from "../../components/Payment/Paypal";
 
 class VerifyEmail extends Component {
   constructor(props) {
@@ -65,10 +66,10 @@ class VerifyEmail extends Component {
                 <div className="infor-booking">
                   <FormattedMessage id="patient.verify-email.failed" />
                 </div>
-              )}
+                )}
             </div>
           )}
-        </div>
+          </div>
 
         <div className="content-footer">
           <p>&copy; 2021-2022 BookingCare B1812794</p>

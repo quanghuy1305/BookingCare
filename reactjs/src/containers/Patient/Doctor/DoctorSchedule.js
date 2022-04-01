@@ -32,7 +32,6 @@ class DoctorSchedule extends Component {
       this.setState({
         allAvailableTime: res.data ? res.data : [],
       });
-      console.log(res);
     }
 
     this.setState({
@@ -123,8 +122,6 @@ class DoctorSchedule extends Component {
   };
 
   render() {
-    console.log(this.state);
-
     let {
       allDays,
       allAvailableTime,

@@ -11,7 +11,6 @@ let postBookAppointment = async (req,res) => {
               errMessage: 'Error from the server'
           })
       }
-      console.log("Check error: ", e)
 }
 let postVerifyBookAppointment = async (req,res) => {
      try {

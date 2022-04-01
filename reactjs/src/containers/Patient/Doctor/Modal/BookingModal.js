@@ -8,12 +8,12 @@ import ProfileDoctor from "../ProfileDoctor";
 import DatePicker from "../../../../components/Input/DatePicker";
 import * as actions from "../../../../store/actions";
 import Select from "react-select";
-import { getProfileDoctorById } from "../../../../services/userService";
 import { LANGUAGES } from "../../../../utils";
 import { postPatientBookAppointment } from "../../../../services/userService";
 import { toast } from "react-toastify";
 import LoadingOverlay from "react-loading-overlay";
 import moment from "moment";
+import PayPal from "../../../../components/Payment/Paypal";
 
 class BookingModal extends Component {
   constructor(props) {
@@ -33,8 +33,11 @@ class BookingModal extends Component {
       statusId: "S1",
 
       isShowLoading: false,
+
+      isPayment: false,
     };
   }
+
   async componentDidMount() {
     this.props.getGenders();
   }
@@ -94,6 +97,8 @@ class BookingModal extends Component {
     this.setState({
       selectedGender: selectedOption,
     });
+    const state = this.state;
+    console.log(state);
   };
 
   buildTimeBooking = (dataTime) => {
@@ -149,8 +154,18 @@ class BookingModal extends Component {
     return isValid;
   };
 
+  handlePayment = async () => {
+    this.setState({ isPayment: true });
+    console.log(this.state.isPayment);
+    console.log(this.state.doctorId);
+  };
+
   handleConfirmBooking = async () => {
     this.checkInput();
+    console.log(this.state);
+    this.setState({
+      isShowLoading: true,
+    });
     let date = new Date(this.state.birthday).getTime();
     let timeString = this.buildTimeBooking(this.props.dataTime);
     let doctorName = this.buildDoctorName(this.props.dataTime);
@@ -170,6 +185,9 @@ class BookingModal extends Component {
       timeString: timeString,
       doctorName: doctorName,
     });
+    this.setState({
+      isShowLoading: false,
+    });
     if (res && res.errCode === 0) {
       toast.success("Đặt lịch thành công !");
       this.props.closeBookingModal();
@@ -181,21 +199,23 @@ class BookingModal extends Component {
   render() {
     let { isOpenModal, closeBookingModal, dataTime } = this.props;
     let doctorId = "";
+    let isPayment = this.state;
+
     if (dataTime && !_.isEmpty(dataTime)) {
       doctorId = dataTime.doctorId;
     }
-    console.log(this.props);
+
     return (
-      <Modal
-        isOpen={isOpenModal}
-        className={"booking-modal-container"}
-        size="lg"
-        centered
+      <LoadingOverlay
+        active={this.state.isShowLoading}
+        spinner
+        text="Loading...."
       >
-        <LoadingOverlay
-          active={this.state.isShowLoading}
-          spinner
-          text="Loading..."
+        <Modal
+          isOpen={isOpenModal}
+          className={"booking-modal-container"}
+          size="lg"
+          centered
         >
           <div className="booking-modal-content">
             <div className="booking-modal-header">
@@ -305,10 +325,18 @@ class BookingModal extends Component {
             <div className="booking-modal-footer">
               <button
                 className="btn-booking-confirm"
-                onClick={() => this.handleConfirmBooking()}
+                onClick={() => this.handlePayment(isPayment)}
               >
                 <FormattedMessage id="patient.booking-modal.btn-confirm" />
               </button>
+              {this.state.isPayment ? (
+                <PayPal
+                  dataTime={this.props.dataTime}
+                  language={this.props.language}
+                  closeBookingModal={this.props.closeBookingModal}
+                  state={this.state}
+                />
+              ) : null}
               <button
                 className="btn-booking-cancel"
                 onClick={closeBookingModal}
@@ -317,8 +345,8 @@ class BookingModal extends Component {
               </button>
             </div>
           </div>
-        </LoadingOverlay>
-      </Modal>
+        </Modal>
+      </LoadingOverlay>
     );
   }
 }

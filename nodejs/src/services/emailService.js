@@ -87,7 +87,7 @@ let sendAttachment = async (dataSend) => {
   return new Promise(async (resolve, reject) => {
     try {
       let transporter = nodemailer.createTransport({
-        host: "smtp.gmail.com",
+        host: "smtp.gmail.com" || "@student.ctu.edu.vn",
         port: 587,
         secure: false, // true for 465, false for other ports
         auth: {
