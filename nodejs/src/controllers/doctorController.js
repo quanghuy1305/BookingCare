@@ -1,8 +1,9 @@
 import doctorService from "../services/doctorService";
 
+// display list limit
 let getTopDoctorHome = async (req, res) => {
   let limit = req.query.limit;
-  if (!limit) limit = 10;
+  if (!limit) limit = 20;
   try {
     let response = await doctorService.getTopDoctorHome(+limit);
     return res.status(200).json(response);
@@ -71,7 +72,7 @@ let getScheduleDoctorByDate = async (req, res) => {
       req.query.doctorId,
       req.query.date
     );
-    return res.status(200).json(infor); 
+    return res.status(200).json(infor);
   } catch (e) {
     console.log(e);
     return res.status(400).json({

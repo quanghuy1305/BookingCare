@@ -13,12 +13,14 @@ import Home from "../routes/Home";
 import Login from "./Auth/Login";
 import System from "../routes/System";
 import { CustomToastCloseButton } from "../components/CustomToast";
+
 import HomePage from "./HomePage/HomPage.js";
 import CustomScrollbars from "../components/CustomScrollbars";
 import DetailDoctor from "./Patient/Doctor/DetailDoctor";
 import Doctor from "../routes/Doctor";
 import VerifyEmail from "./Patient/VerifyEmail";
 import DetailSpecialty from "./Patient/Specialty/DetailSpecialty";
+import DetailDoctorOnline from "./Patient/DoctorOnline/DetailDoctorOnline";
 
 class App extends Component {
   handlePersistorState = () => {
@@ -67,6 +69,10 @@ class App extends Component {
                   <Route
                     path={path.DETAIL_SPECIALTY}
                     component={DetailSpecialty}
+                  />
+                  <Route
+                    path={path.DETAIL_DOCTOR_ONLINE}
+                    component={DetailDoctorOnline}
                   />
                   <Route
                     path={path.VERIFY_EMAIL_BOOKING}

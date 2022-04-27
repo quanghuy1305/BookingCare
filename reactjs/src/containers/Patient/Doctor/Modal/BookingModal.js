@@ -98,7 +98,6 @@ class BookingModal extends Component {
       selectedGender: selectedOption,
     });
     const state = this.state;
-    console.log(state);
   };
 
   buildTimeBooking = (dataTime) => {
@@ -162,7 +161,6 @@ class BookingModal extends Component {
 
   handleConfirmBooking = async () => {
     this.checkInput();
-    console.log(this.state);
     this.setState({
       isShowLoading: true,
     });
@@ -323,20 +321,29 @@ class BookingModal extends Component {
               </div>
             </div>
             <div className="booking-modal-footer">
+              <div className="paypal">
+                {this.state.isPayment ? (
+                  <PayPal
+                    dataTime={this.props.dataTime}
+                    language={this.props.language}
+                    closeBookingModal={this.props.closeBookingModal}
+                    state={this.state}
+                    isShowPrice={true}
+                  />
+                ) : null}
+              </div>
+              <button
+                className="btn-payment"
+                onClick={() => this.handlePayment(isPayment)}
+              >
+                Thanh Toán Paypal
+              </button>
               <button
                 className="btn-booking-confirm"
-                onClick={() => this.handlePayment(isPayment)}
+                onClick={() => this.handleConfirmBooking()}
               >
                 <FormattedMessage id="patient.booking-modal.btn-confirm" />
               </button>
-              {this.state.isPayment ? (
-                <PayPal
-                  dataTime={this.props.dataTime}
-                  language={this.props.language}
-                  closeBookingModal={this.props.closeBookingModal}
-                  state={this.state}
-                />
-              ) : null}
               <button
                 className="btn-booking-cancel"
                 onClick={closeBookingModal}

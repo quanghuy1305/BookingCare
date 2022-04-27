@@ -24,6 +24,10 @@ const getAllSpecialty = (inputId) => {
   return axios.get(`/api/get-all-specialty?id=${inputId}`);
 };
 
+const getDoctorOnline = (inputId) => {
+  return axios.get(`/api/get-DoctorOnline?id=${inputId}`);
+};
+
 const deleteSpecialty = (name) => {
   return axios.delete("/api/delete-specialty", {
     data: {
@@ -87,12 +91,15 @@ const createNewSpecialtyService = (data) => {
   return axios.post("/api/create-new-specialty", data);
 };
 
+const createNewDoctorOnlineService = (data) => {
+  return axios.post("/api/create-new-doctor-online", data);
+};
+
 const getAllDetailSpecialtyById = (data) => {
   return axios.get(
     `/api/get-detail-specialty-by-id?id=${data.id}&location=${data.location}`
   );
 };
-
 const getAllPatientForDoctor = (data) => {
   return axios.get(
     `/api/get-list-patient-for-doctor?doctorId=${data.doctorId}&date=${data.date}`
@@ -101,6 +108,12 @@ const getAllPatientForDoctor = (data) => {
 
 const postSendRemedy = (data) => {
   return axios.post("/api/send-remedy", data);
+};
+
+const getAllDetailDoctorOnlineById = (data) => {
+  return axios.get(
+    `/api/get-detail-doctorOnline-by-id?id=${data.id}&location=${data.location}`
+  );
 };
 
 export {
@@ -127,4 +140,7 @@ export {
   postSendRemedy,
   deleteSpecialty,
   editSpecialtyService,
+  createNewDoctorOnlineService,
+  getDoctorOnline,
+  getAllDetailDoctorOnlineById,
 };

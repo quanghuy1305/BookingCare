@@ -12,9 +12,7 @@ import { Link } from "react-router-dom";
 class ProfileDoctor extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      dataProfile: {},
-    };
+    this.state = {};
   }
   async componentDidMount() {
     let data = await this.getInforDoctor(this.props.doctorId);

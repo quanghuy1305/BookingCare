@@ -1,11 +1,11 @@
 .home-header-container {
-  height: 75 px;
+  height: 60px;
   width: 100%;
   padding: 0 50px;
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: rgb(243, 239, 239);
+  background-color: hsl(199, 88%, 75%);
 
   .home-header-content {
     width: 100%;
@@ -18,8 +18,8 @@
       cursor: pointer;
 
       .header-logo {
-        height: 100%;
-        width: 100%;
+        height: 100px;
+        width: 450px;
         cursor: pointer;
         transform: scale(0.5, 0.5);
         margin-left: -55px;
@@ -27,12 +27,11 @@
       i {
         font-size: 25px;
         color: grey;
-        cursor: pointer;
       }
     }
 
     .center-content {
-      width: 55%;
+      width: 65%;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -46,7 +45,7 @@
     }
 
     .right-content {
-      width: 25%;
+      width: 15%;
       display: flex;
       align-items: center;
       justify-content: flex-end;
@@ -66,7 +65,7 @@
         opacity: 0.2;
         &.action {
           opacity: 0.8;
-          color: rgb(17, 32, 238);
+          color: rgb(252, 2, 52);
         }
         &:hover {
           opacity: 1;
@@ -90,7 +89,7 @@
   }
 }
 .home-header-banner {
-  background-image: url("../../assets/header-background.jpg");
+  background-image: url("../../assets/bg.jpg");
 
   height: 600px;
   background-repeat: no-repeat;
@@ -112,14 +111,15 @@
       font-size: 30px;
       text-shadow: 1px 1px 1px #333;
       margin-bottom: 5px;
-      color: white;
+      color: rgb(255, 252, 252);
       margin-top: 30px;
+      
     }
     .title2 {
       text-align: center;
       font-size: 30px;
       text-shadow: 1px 1px 1px #333;
-      color: white;
+      color: rgb(255, 252, 252);
       margin-bottom: 30px;
     }
     .search {
@@ -154,7 +154,6 @@
     padding-bottom: 10px;
     background-image: linear-gradient(
       rgba(255, 255, 255, 0.1),
-      rgba(255, 255, 255, 0.9),
       rgba(255, 255, 255, 1)
     );
     .options {

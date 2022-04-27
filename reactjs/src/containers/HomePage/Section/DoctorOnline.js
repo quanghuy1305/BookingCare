@@ -2,60 +2,62 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { FormattedMessage } from "react-intl";
 import Slider from "react-slick";
-import { getAllSpecialty } from "../../../services/userService";
+import { getDoctorOnline } from "../../../services/userService";
 import { withRouter } from "react-router";
+import "./DoctorOnline.scss";
 
-class Specialty extends Component {
+class DoctorOnline extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      dataSpecialty: {},
+      dataDoctorOnline: {},
     };
   }
 
   async componentDidMount() {
-    let res = await getAllSpecialty();
+    let res = await getDoctorOnline();
     if (res && res.errCode === 0) {
       this.setState({
-        dataSpecialty: res.data ? res.data : [],
+        dataDoctorOnline: res.data ? res.data : [],
       });
     }
   }
 
-  handleViewDetailSpecialty = (item) => {
+  handleViewDetailDoctorOnline = (item) => {
     if (this.props.history) {
-      this.props.history.push(`/detail-specialty/${item.id}`);
+      this.props.history.push(`/detail-doctor-online/${item.id}`);
     }
   };
+
   render() {
-    let { dataSpecialty } = this.state;
+    let { dataDoctorOnline } = this.state;
     return (
-      <div className="section-share section-specialty">
+      <div className="section-share section-DoctorOnline">
         <div className="section-container">
           <div className="section-header">
             <span className="title-section">
-              <FormattedMessage id="homepage.specialty" />
+              <FormattedMessage id="homepage.doctorOnline" />
+              <i className="video fa fa-video" />
             </span>
           </div>
-
           <div className="section-body">
             <Slider {...this.props.settings}>
-              {dataSpecialty &&
-                dataSpecialty.length > 0 &&
-                dataSpecialty.map((item, index) => {
+              {dataDoctorOnline &&
+                dataDoctorOnline.length > 0 &&
+                dataDoctorOnline.map((item, index) => {
                   return (
                     <div
-                      className="section-customize specialty-child"
+                      className="section-customize doctorOnline-child"
                       key={index}
-                      onClick={() => this.handleViewDetailSpecialty(item)}
+                      onClick={() => this.handleViewDetailDoctorOnline(item)}
                     >
                       <div
-                        className="bg-img section-specialty"
+                        className="bg-img section-DoctorOnline"
                         style={{
                           backgroundImage: `url(${item.image})`,
                         }}
                       />
-                      <div className="specialty-name">{item.name}</div>
+                      <div className="doctorOnline-name">{item.name}</div>
                     </div>
                   );
                 })}
@@ -79,5 +81,5 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default withRouter(
-  connect(mapStateToProps, mapDispatchToProps)(Specialty)
+  connect(mapStateToProps, mapDispatchToProps)(DoctorOnline)
 );

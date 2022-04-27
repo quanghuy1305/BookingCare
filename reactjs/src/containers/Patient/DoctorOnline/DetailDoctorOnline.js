@@ -1,23 +1,23 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import "./DetailSpecialty.scss";
+import "./DetailDoctorOnline.scss";
 import HomeHeader from "../../HomePage/HomeHeader";
 import DoctorSchedule from "../Doctor/DoctorSchedule";
 import DoctorExtraInfor from "../Doctor/DoctorExtraInfor";
 import ProfileDoctor from "../Doctor/ProfileDoctor";
 import {
-  getAllDetailSpecialtyById,
+  getAllDetailDoctorOnlineById,
   getAllCodeService,
 } from "../../../services/userService";
 import _ from "lodash";
 import { LANGUAGES } from "../../../utils";
 
-class DetailSpecialty extends Component {
+class DetailDoctorOnline extends Component {
   constructor(props) {
     super(props);
     this.state = {
       arrDoctorId: [],
-      dataDetailSpecialty: {},
+      dataDetailDoctorOnline: {},
       listProvince: [],
     };
   }
@@ -29,7 +29,7 @@ class DetailSpecialty extends Component {
     ) {
       let id = this.props.match.params.id;
 
-      let res = await getAllDetailSpecialtyById({
+      let res = await getAllDetailDoctorOnlineById({
         id: id,
         location: "ALL",
       });
@@ -43,7 +43,7 @@ class DetailSpecialty extends Component {
         let data = res.data;
         let arrDoctorId = [];
         if (data && !_.isEmpty(res.data)) {
-          let arr = data.doctorSpecialty;
+          let arr = data.doctorOnline;
           if (arr && arr.length > 0) {
             arr.map((item) => {
               arrDoctorId.push(item.doctorId);
@@ -63,7 +63,7 @@ class DetailSpecialty extends Component {
         }
 
         this.setState({
-          dataDetailSpecialty: res.data,
+          dataDetailDoctorOnline: res.data,
           arrDoctorId: arrDoctorId,
           listProvince: dataProvince ? dataProvince : "",
         });
@@ -87,7 +87,7 @@ class DetailSpecialty extends Component {
       let id = this.props.match.params.id;
       let location = event.target.value;
 
-      let res = await getAllDetailSpecialtyById({
+      let res = await getAllDetailDoctorOnlineById({
         id: id,
         location: location,
       });
@@ -95,16 +95,15 @@ class DetailSpecialty extends Component {
         let data = res.data;
         let arrDoctorId = [];
         if (data && !_.isEmpty(res.data)) {
-          let arr = data.doctorSpecialty;
+          let arr = data.doctorOnline;
           if (arr && arr.length > 0) {
             arr.map((item) => {
               arrDoctorId.push(item.doctorId);
             });
           }
         }
-
         this.setState({
-          dataDetailSpecialty: res.data,
+          dataDetailDoctorOnline: res.data,
           arrDoctorId: arrDoctorId,
         });
       }
@@ -112,41 +111,27 @@ class DetailSpecialty extends Component {
   };
 
   render() {
-    let { arrDoctorId, dataDetailSpecialty, listProvince } = this.state;
-    console.log("Check state: ", this.state);
+    let { arrDoctorId, dataDetailDoctorOnline, listProvince } = this.state;
     let { language } = this.props;
     return (
-      <div className="detail-specialty-container">
+      <div className="detail-container">
         <HomeHeader />
-        <div className="detail-specialty-body">
-          <div className="description-specialty">
-            {dataDetailSpecialty && !_.isEmpty(dataDetailSpecialty) && (
+        <div className="detail-doctor-online-body">
+          <div className="description-doctor-online">
+            {dataDetailDoctorOnline && !_.isEmpty(dataDetailDoctorOnline) && (
               <div
                 dangerouslySetInnerHTML={{
-                  __html: dataDetailSpecialty.descriptionHTML,
+                  __html: dataDetailDoctorOnline.descriptionHTML,
                 }}
               ></div>
             )}
-          </div>
-          <div className="search-doctor-specialty">
-            <select onChange={(event) => this.handleOnChangeSelect(event)}>
-              {listProvince &&
-                listProvince.length > 0 &&
-                listProvince.map((item, index) => {
-                  return (
-                    <option key={index} value={item.keyMap}>
-                      {language === LANGUAGES.VI ? item.valueVi : item.valueEn}
-                    </option>
-                  );
-                })}
-            </select>
           </div>
           {arrDoctorId &&
             arrDoctorId.length > 0 &&
             arrDoctorId.map((item, index) => {
               return (
-                <div className="each-doctor" key={index}>
-                  <div className="detail-content-left">
+                <div className="detail-center" key={index}>
+                  <div className="detail-left">
                     <div className="profile-doctor">
                       <ProfileDoctor
                         doctorId={item}
@@ -156,7 +141,7 @@ class DetailSpecialty extends Component {
                       />
                     </div>
                   </div>
-                  <div className="detail-content-right">
+                  <div className="detail-right">
                     <div className="doctor-schedule">
                       <DoctorSchedule doctorIdFromParent={item} />
                     </div>
@@ -181,4 +166,4 @@ const mapDispatchToProps = (dispatch) => {
   return {};
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(DetailSpecialty);
+export default connect(mapStateToProps, mapDispatchToProps)(DetailDoctorOnline);

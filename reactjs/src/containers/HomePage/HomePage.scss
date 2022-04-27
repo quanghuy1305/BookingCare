@@ -34,7 +34,7 @@
     //chuyên khoa
     background: #f5f5f5;
   }
-  &.section-medical-facility {
+  &.section-DoctorOnline {
     background: white;
   }
   &.section-outstanding-doctor {
@@ -53,6 +53,11 @@
   .section-body {
     .specialty-child {
       .specialty-name {
+        padding: 10px 0;
+      }
+    }
+    .doctorOnline-child {
+      .doctorOnline-name {
         padding: 10px 0;
       }
     }
@@ -80,9 +85,9 @@
         // &.section-specialty {
         //   // background-image: url('../../assets/specialty/co-xuong-khop.jpg');
         // }
-        &.section-medical-facility {
-          background-image: url("../../assets/medical-facility/benh-vien-thu-cuc.jpg");
-        }
+        // &.section-DoctorOnline {
+        //   background-image: url("../../assets/medical-facility/benh-vien-thu-cuc.jpg");
+        // }
         &.section-outstanding-doctor {
           // background-image: url('../../assets/outstanding-doctor/anh-dai-dien-bs.jpg');
           width: 120px;
@@ -151,11 +156,11 @@
 .home-footer {
   text-align: center;
   padding-top: 8px;
-  background-color: rgb(132, 198, 230);
+  background-color: rgb(199, 224, 237);
   a {
     text-decoration: unset;
   }
-  border: 1px solid rgb(132, 198, 230);
+  border: 1px solid rgb(199, 224, 237);
 }
 
 .section-about {

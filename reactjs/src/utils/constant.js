@@ -6,13 +6,16 @@ export const path = {
   SYSTEM: "/system",
   DETAIL_DOCTOR: "/detail-doctor/:id",
   DETAIL_SPECIALTY: "/detail-specialty/:id",
+
+  DETAIL_DOCTOR_ONLINE: "/detail-doctor-online/:id",
+
   VERIFY_EMAIL_BOOKING: "/verify-booking",
 };
 
 export const LANGUAGES = {
   VI: "vi",
   EN: "en",
-};  
+};
 
 export const CRUD_ACTIONS = {
   CREATE: "CREATE",

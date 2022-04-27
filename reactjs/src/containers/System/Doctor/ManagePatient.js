@@ -145,39 +145,30 @@ class ManagePatient extends Component {
                   <tbody>
                     <tr>
                       <th>
-                        {" "}
                         <FormattedMessage id="manage-patient.number" />
                       </th>
                       <th>
-                        {" "}
                         <FormattedMessage id="manage-patient.time" />
                       </th>
                       <th>
-                        {" "}
                         <FormattedMessage id="manage-patient.fullName" />
                       </th>
                       <th>
-                        {" "}
                         <FormattedMessage id="manage-patient.address" />
                       </th>
                       <th>
-                        {" "}
                         <FormattedMessage id="manage-patient.reason" />
                       </th>
                       <th>
-                        {" "}
                         <FormattedMessage id="manage-patient.phoneNumber" />
                       </th>
                       <th>
-                        {" "}
                         <FormattedMessage id="manage-patient.email" />
                       </th>
                       <th>
-                        {" "}
                         <FormattedMessage id="manage-patient.gender" />
                       </th>
                       <th>
-                        {" "}
                         <FormattedMessage id="manage-patient.action" />
                       </th>
                     </tr>
@@ -208,6 +199,12 @@ class ManagePatient extends Component {
                               >
                                 {" "}
                                 <FormattedMessage id="manage-patient.btn-confirm" />
+                              </button>
+                              <button
+                                className="mp-btn-confirm"
+                                onClick={() => this.handleBtnConfirm(item)}
+                              >
+                                Tạo Lịch
                               </button>
                             </td>
                           </tr>

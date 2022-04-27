@@ -55,7 +55,7 @@ let postBookAppointment = (data) => {
             where: { patientId: user[0].id },
             defaults: {
               statusId: "S1",
-              doctorId: data.doctorId,
+              doctorId: 17,
               patientId: user[0].id,
               fullName: data.fullName,
               phoneNumber: data.phoneNumber,
@@ -111,7 +111,7 @@ let postVerifyBookAppointment = (data) => {
       } else {
         let appointment = await db.Booking.findOne({
           where: {
-            doctorId: data.doctorId,
+            doctorId: 17,
             token: data.token,
             statusId: "S1",
           },

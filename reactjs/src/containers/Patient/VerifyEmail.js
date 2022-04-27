@@ -66,13 +66,13 @@ class VerifyEmail extends Component {
                 <div className="infor-booking">
                   <FormattedMessage id="patient.verify-email.failed" />
                 </div>
-                )}
+              )}
             </div>
           )}
-          </div>
+        </div>
 
         <div className="content-footer">
-          <p>&copy; 2021-2022 BookingCare B1812794</p>
+          <p>&copy; 2021-2022 Hỗ trợ khách hàng</p>
           <i className="fas fa-phone"> Hỗ trợ: 0819 39 99 88</i>
         </div>
       </>

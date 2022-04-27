@@ -26,15 +26,15 @@ export const adminMenu = [
   },
 
   // // quản lý phòng khám
-  // {
-  //         name: 'menu.admin.clinic',
-  //         menus: [
-  //             {
-  //                 name: 'menu.admin.manage-clinic', link: '/system/manage-clinic'
-  //             }
-
-  //         ]
-  // },
+  {
+    name: "menu.admin.doctor-online",
+    menus: [
+      {
+        name: "menu.admin.manage-doctor-online",
+        link: "/system/manage-doctor-online",
+      },
+    ],
+  },
 
   // quản lý chuyên khoa
   {

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import "./HomeHeader.scss";
-import logo from "../../assets/logo.svg";
+import logo from "../../assets/logo.png";
 import { FormattedMessage } from "react-intl";
 import { LANGUAGES } from "../../utils";
 import { withRouter } from "react-router";
@@ -25,7 +25,6 @@ class HomeHeader extends Component {
         <div className="home-header-container">
           <div className="home-header-content">
             <div className="left-content">
-              <i className="fas fa-bars"></i>
               <img
                 className="header-logo"
                 src={logo}
@@ -110,7 +109,6 @@ class HomeHeader extends Component {
           <div className="home-header-banner">
             <div className="content-up">
               <div className="title1">
-                {" "}
                 <FormattedMessage id="banner.title1" />
               </div>
               <div className="title2">

@@ -78,7 +78,6 @@ let checkRequiredFields = (inputData) => {
       break;
     }
   }
-
   return {
     isValid: isValid,
     element: element,

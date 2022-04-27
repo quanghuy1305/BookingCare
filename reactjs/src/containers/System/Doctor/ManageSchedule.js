@@ -107,6 +107,7 @@ class ManageSchedule extends Component {
         selectedTime.map((schedule) => {
           let object = {};
           object.doctorId = selectedDoctor.value;
+          object.staffId = 17;
           object.date = formattedDate;
           object.timeType = schedule.keyMap;
           object.status = 1;
@@ -121,9 +122,9 @@ class ManageSchedule extends Component {
     let res = await saveBulkScheduleDoctor({
       arrSchedule: result,
       doctorId: selectedDoctor.value,
+      staffId: 17,
       formattedDate: formattedDate,
     });
-    console.log("check data -->: ", res);
     if (res && res.errCode === 0) {
       toast.success("Lưu thành công !");
     } else {
@@ -136,7 +137,6 @@ class ManageSchedule extends Component {
     let { rangeTime } = this.state;
     let { language } = this.props;
     let yesterday = new Date(new Date().setDate(new Date().getDate() - 1));
-    console.log("check state schedule -->: ", this.state);
     return (
       <div className="manage-schedule-container">
         <div className="manage-schedule-title">

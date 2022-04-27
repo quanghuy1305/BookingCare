@@ -109,7 +109,7 @@ let deleteSpecialty = (specialtyId) => {
   });
 };
 
-let updateSpecialty = (data) => {
+let handleEditSpecialty = (data) => {
   return new Promise(async (resolve, reject) => {
     try {
       if (
@@ -154,5 +154,5 @@ module.exports = {
   getAllSpecialty: getAllSpecialty,
   getDetailSpecialtyById: getDetailSpecialtyById,
   deleteSpecialty: deleteSpecialty,
-  updateSpecialty: updateSpecialty,
+  handleEditSpecialty: handleEditSpecialty,
 };

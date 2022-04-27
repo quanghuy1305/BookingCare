@@ -4,10 +4,9 @@ import { LANGUAGES } from "../../utils";
 import _ from "lodash";
 import moment from "moment";
 import { toast } from "react-toastify";
+import ProfileDoctor from "../../containers/Patient/Doctor/ProfileDoctor";
 
 export default function Paypal(props) {
-  const [email, setEmail] = useState("");
-
   const paypal = useRef();
 
   const checkInput = () => {
@@ -67,6 +66,13 @@ export default function Paypal(props) {
   useEffect(() => {
     window.paypal
       .Buttons({
+        style: {
+          color: "blue",
+          shape: "pill",
+          label: "pay",
+          height: 30,
+          width: 100,
+        },
         createOrder: (data, actions, err) => {
           return actions.order.create({
             intent: "CAPTURE",
@@ -91,8 +97,6 @@ export default function Paypal(props) {
           let timeString = buildTimeBooking(props.dataTime);
           let doctorName = buildDoctorName(props.dataTime);
 
-          console.log(doctorName);
-
           let res = await postPatientBookAppointment({
             fullName: props.state.fullName,
             phoneNumber: props.state.phoneNumber,
@@ -109,8 +113,7 @@ export default function Paypal(props) {
             doctorName: doctorName,
           });
           props.state.isShowLoading = false;
-          console.log(res);
-
+          <ProfileDoctor isShowPrice={true} />;
           if (res && res.errCode === 0) {
             toast.success("Đặt lịch thành công !");
             props.closeBookingModal();

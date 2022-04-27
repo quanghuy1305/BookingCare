@@ -34,8 +34,8 @@
       "manage-admin": "Quản lý admin",
       "crud": "CRUD user",
       "crud-redux": "Quản lý bác sĩ",
-      "clinic": "Phòng khám",
-      "manage-clinic": "Quản lý phòng khám",
+      "doctor-online": "Phòng khám Online",
+      "manage-doctor-online": "Quản lý phòng khám Online",
       "specialty": "Chuyên Khoa",
       "manage-specialty": "Quản lý chuyên khoa",
       "handbook": "Cẩm nang",
@@ -67,7 +67,8 @@
   "homepage": {
     "outstanding-doctor": "Bác sĩ",
     "more-info": "Xem thêm",
-    "specialty": "Chuyên khoa"
+    "specialty": "Chuyên khoa",
+    "doctorOnline": "Bác sĩ tư vấn qua Video"
   },
 
   "manage-schedule": {
@@ -146,7 +147,7 @@
       "addressClinic": "Địa chỉ phòng khám",
       "note": "Ghi chú",
       "specialty": "Chuyên Khoa",
-      "select-clinic": "Phòng khám"
+      "select-clinic": "Phòng khám Online"
     }
   },
   "about": {

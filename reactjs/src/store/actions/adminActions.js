@@ -12,6 +12,8 @@ import {
   createNewSpecialtyService,
   deleteSpecialty,
   editSpecialtyService,
+  createNewDoctorOnlineService,
+  getDoctorOnline,
 } from "../../services/userService";
 import { toast } from "react-toastify";
 
@@ -109,6 +111,56 @@ export const saveSpecialtySuccess = () => ({
 });
 export const saveSpecialtyFailed = () => ({
   type: actionTypes.CREATE_SPECIALTY_FAILED,
+});
+
+export const createNewDoctorOnline = (data) => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await createNewDoctorOnlineService(data);
+
+      if (res && res.errCode === 0) {
+        toast.success("Tạo thành công !");
+        dispatch(saveDoctorOnlineSuccess());
+        dispatch(fetchAllDoctorOnlineStart());
+      } else {
+        dispatch(saveSpecialtyFailed());
+      }
+    } catch (e) {
+      dispatch(saveDoctorOnlineFailed());
+      console.log("saveDoctorOnlineFailed error", e);
+    }
+  };
+};
+export const saveDoctorOnlineSuccess = () => ({
+  type: actionTypes.CREATE_DOCTOR_ONLINE_SUCCESS,
+});
+export const saveDoctorOnlineFailed = () => ({
+  type: actionTypes.CREATE_DOCTOR_ONLINE_FAILED,
+});
+
+export const fetchAllDoctorOnlineStart = () => {
+  return async (dispatch, getState) => {
+    try {
+      let res = await getDoctorOnline("ALL");
+      if (res && res.errCode === 0) {
+        dispatch(fetchAllDoctorOnlineSuccess(res.data.reverse()));
+      } else {
+        toast.error("Đã xảy ra lỗi !");
+        dispatch(fetchAllDoctorOnlineFailed());
+      }
+    } catch (e) {
+      toast.error("Đã xảy ra lỗi !");
+      dispatch(fetchAllDoctorOnlineFailed());
+      console.log("fetchAllDoctorOnlineStart error", e);
+    }
+  };
+};
+export const fetchAllDoctorOnlineSuccess = (data) => ({
+  type: actionTypes.FETCH_ALL_DOCTOR_ONLINE_SUCCESS,
+  specialty: data,
+});
+export const fetchAllDoctorOnlineFailed = () => ({
+  type: actionTypes.FETCH_ALL_DOCTOR_ONLINE_FAILDED,
 });
 
 export const createNewUser = (data) => {
@@ -317,6 +369,7 @@ export const getRequiredDoctorInfor = () => {
       let resPayment = await getAllCodeService("PAYMENT");
       let resProvince = await getAllCodeService("PROVINCE");
       let resSpecialty = await getAllSpecialty();
+      let resClinic = await getDoctorOnline();
 
       if (
         resPrice &&
@@ -326,13 +379,16 @@ export const getRequiredDoctorInfor = () => {
         resProvince &&
         resProvince.errCode === 0 &&
         resSpecialty &&
-        resSpecialty.errCode === 0
+        resSpecialty.errCode === 0 &&
+        resClinic &&
+        resClinic.errCode === 0
       ) {
         let data = {
           resPrice: resPrice.data,
           resPayment: resPayment.data,
           resProvince: resProvince.data,
           resSpecialty: resSpecialty.data,
+          resClinic: resClinic.data,
         };
         dispatch(fetchRequiredDoctorInforSuccess(data));
       } else {

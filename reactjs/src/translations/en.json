@@ -36,8 +36,8 @@
       "manage-admin": "Manage Admin",
       "crud": "CRUD user",
       "crud-redux": "CRUD redux",
-      "clinic": "Clinic",
-      "manage-clinic": "Manage Clinic",
+      "doctor-online": "Doctor Online",
+      "manage-doctor-online": "Manage Doctor Online",
       "specialty": "Specialties",
       "manage-specialty": "Manage Specialties",
       "handbook": "HandBook",
@@ -69,7 +69,8 @@
   "homepage": {
     "outstanding-doctor": "Doctor",
     "more-info": "More Information",
-    "specialty": "Medical specialty"
+    "specialty": "Medical specialty",
+    "doctorOnline": "Doctor examines with video"
   },
 
   "manage-schedule": {
